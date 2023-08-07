@@ -6,8 +6,8 @@ import facebook from "../../public/facebook.png"
 import youtobe from "../../public/youtobe.png"
 const Footer = () => {
   return (
-    <div className="container footContent mt-10 mb-2 p-8 mx-auto flex justify-between">
-      <ul className="card" >
+    <div className="container footContent mt-10 mb-2 p-8 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between">
+      <ul className="card  mx-auto" >
         <h2 className="text-yellow-300 text-3xl">
         Biz haqimizda
         </h2>
@@ -27,7 +27,8 @@ const Footer = () => {
           <Link href="#"> <Image src={youtobe} alt="rasm" width={40} height={40}/></Link>
        </div>
       </ul>
-      <ul className="text-left text-yellow-300">
+
+      <ul className="text-left text-yellow-300 mx-auto">
         <h2 className="text-3xl pb-4">
 Biz bilan aloqa
         </h2>
@@ -38,7 +39,8 @@ Biz bilan aloqa
           +998901859499
         </li>
       </ul>
-      <ul className="text-yellow-300">
+
+      <ul className="text-yellow-300 mx-auto">
         <h2 className="text-3xl ">Yangiliklar</h2>
       </ul>
     </div>

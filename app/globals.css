@@ -192,7 +192,6 @@ nav .korzinka {
   width: 350px;
 
   margin-bottom: 15px;
-  display: flex;
   justify-content: center;
   position: relative;
 }
@@ -216,7 +215,7 @@ h3 {
   font-weight: 400;
   line-height: 24px;
 }
-.footContent{
+.footContent {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -226,5 +225,69 @@ h3 {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.modal {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 247, 247, 0.1),
+    rgba(244, 245, 245, 0)
+  );
+  padding: 30px 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.modal img {
+  height: 40px;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+.open {
+  display: inline-flex;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.input {
+  background: linear-gradient(
+    135deg,
+    rgba(249, 247, 247, 0.1),
+    rgba(244, 245, 245, 0)
+  );
+  padding: 30px 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.btn{
+ 
+  padding: 30px 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }

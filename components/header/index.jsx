@@ -1,14 +1,29 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import korzinka from "../../public/korzinka.png"
+import menu from "../../public/menu.png"
+import close from "../../public/close.png"
 const Header = () => {
+
+
+  const handleClose = () => {
+    const modal =document.querySelector(".modal")
+    modal.classList.remove("open")
+  };
+  const handleShow = () => {
+ const modal =document.querySelector(".modal")
+ modal.classList.toggle("open")
+  
+  }
   return (
-    <div className="container mx-auto ">
-<nav className="flex justify-between  text-yellow-300 items-center mt-10 p-4 rounded-2xl   ">
+    <div className="container relative  mx-auto ">
+<nav className="flex justify-between  fixed  top-0 left-0 right-0 z-10 text-yellow-300 items-center mt-1 p-4 rounded-2xl   ">
   <Link className="text-3xl logo" href="#">Vodiy Parfum</Link>
-  <ul className="flex items-center gap-6">
+  <ul className=" hidden items-center lg:flex gap-6">
     <li>
-      <Link href="#">Asosiy</Link>
+      <Link href="/">Asosiy</Link>
     </li> 
     
      <li>
@@ -26,6 +41,9 @@ const Header = () => {
      <li>
       <Link href="#">Chiqish</Link>
     </li> 
+    <li>
+      <Link href="/login" className="border-solid border-2 border-orange-300 py-2 px-5 flex  rounded-2xl">Login</Link>
+    </li>
        <li className="korzinka p-2 rounded-2xl">
       <Link href="#">
       <Image
@@ -39,7 +57,55 @@ const Header = () => {
 
 
   </ul>
+<Image onClick={handleShow} className=" inline-flex lg:hidden"  src={menu} alt="logo" width={40} height={40}/>
 </nav>
+<div  className="modal  flex align-top justify-evenly">
+
+        
+<ul  className=" items-center grid grid-cols-1 md:grid-cols-2 text-2xl md:pt-10 justify-center  text-yellow-300  gap-6">
+    <li>
+      <Link href="/">Asosiy</Link>
+    </li> 
+    
+     <li>
+      <Link href="#">Biz haqimizda</Link>
+    </li> 
+    
+     <li>
+      <Link href="#">Aloqa</Link>
+    </li> 
+    
+     <li>
+      <Link href="#">Buyurtmalar tarixi</Link>
+    </li> 
+    
+     <li>
+      <Link href="#">Chiqish</Link>
+    </li> 
+
+    <li>
+      <Link href="/login" className="border-solid border-2 border-orange-300 py-2 px-5 flex  rounded-2xl">Login</Link>
+    </li>
+       <li className="korzinka p-2 rounded-2xl">
+      <Link href="#">
+        <div > 
+
+      <Image 
+      className="w-10 close"
+      onClick={handleClose}
+      src={korzinka}
+      alt="korzinka"
+      width={5}
+      height={5}
+    />
+        </div>
+      </Link>
+    </li>
+
+
+  </ul>
+  <Image className="close" onClick={handleClose} src={close} alt="close" width={40} height={40}/>
+</div>
     </div>
   )
 }
