@@ -61,6 +61,6 @@ const YangiTovar = ({ last }) => {
   );
 };
 YangiTovar.propTypes = {
-  last: PropTypes.object,
+  last: PropTypes.array,
 };
 export default YangiTovar;
