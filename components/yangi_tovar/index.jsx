@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 import "swiper/css";
 
@@ -37,13 +36,13 @@ const YangiTovar = ({ last }) => {
           }}
           slidesPerView={4}
         >
-          {last?.map((category) => (
-            <SwiperSlide key={category?._id}>
+          {last?.map((category,i) => (
+            <SwiperSlide key={i}>
               <li className="text-yellow-300 mx-auto">
                 <Link href={`category/${category?.category}`}>
                   <Image
                     className="w-72 rounded-2xl m-auto h-44 p-2 bg-cover"
-                    src={category?.image?.url}
+                    src={category?.image.url}
                     alt="rasm"
                     width={250}
                     height={20}

@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import korzinka from "../../public/korzinka.png"
-import menu from "../../public/menu.png"
-import close from "../../public/close.png"
+import korzinka from "/public/korzinka.png"
+import menu from "/public/menu.png"
+import close from "/public/close.png"
 const Header = () => {
 
 

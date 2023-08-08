@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import telegram from "../../public/telegram.png"
-import instagram from "../../public/instagram.png"
-import facebook from "../../public/facebook.png"
-import youtobe from "../../public/youtobe.png"
+import telegram from "/public/telegram.png"
+import instagram from "/public/instagram.png"
+import facebook from "/public/facebook.png"
+import youtobe from "/public/youtobe.png"
 const Footer = () => {
   return (
     <div className="container footContent mt-10 mb-2 p-8 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between">

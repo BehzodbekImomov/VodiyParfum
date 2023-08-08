@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import 'swiper/css'; 
 
 import './globals.css'
 import { Inter } from 'next/font/google'
