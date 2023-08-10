@@ -6,14 +6,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "swiper/css";
+import { Autoplay} from 'swiper/modules';
 
 const YangiTovar = ({ last }) => {
+  
   return (
     <div className="container mx-auto mt-6 p-4 rounded-2xl text-center yangi">
       <h2 className="text-3xl  text-yellow-300">Yangi mahsulotlar</h2>
       <ul className="yangi_card  gap-5  mt-10">
         <Swiper
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
           pagination={{
+         
             clickable: true,
           }}
           breakpoints={{
@@ -35,6 +42,7 @@ const YangiTovar = ({ last }) => {
             },
           }}
           slidesPerView={4}
+          modules={[Autoplay]}
         >
           {last?.map((category,i) => (
             <SwiperSlide key={i}>

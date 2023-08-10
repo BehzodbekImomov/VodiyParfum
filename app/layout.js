@@ -1,26 +1,21 @@
-import * as React from 'react';
+"use client";
 
+import { ReduxProvider } from "@/redux/provider";
+import { Inter } from "next/font/google";
 
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
+import "../app/globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'E-commers',
-  description: 'E-commerse site',
-}
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>E-commerce</title>
+      </head>
       <body className={inter.className}>
-        <Header/>
-        {children}
-        <Footer/>
-        </body>
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
     </html>
-  )
+  );
 }
