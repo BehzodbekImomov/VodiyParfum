@@ -2,14 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-
 import Image from "next/image";
 import Link from "next/link";
 
 import korzinka from "/public/korzinka.png";
 import menu from "/public/menu.png";
 import close from "/public/close.png";
-import { Fragment } from "react";
 const Header = () => {
   const handleClose = () => {
     const modal = document.querySelector(".modal");
@@ -45,9 +43,10 @@ const Header = () => {
           <li>
             <Link href="#">Buyurtmalar tarixi</Link>
           </li>
-
           <li>
-            <Link href="#">Chiqish</Link>
+            <Link onClick={() => dispatch(logout(router))} href="#">
+              Chiqish
+            </Link>
           </li>
           <li>
             <Link
@@ -109,7 +108,9 @@ const Header = () => {
           </li>
 
           <li>
-            <Link href="#">Chiqish</Link>
+            <Link onClick={() => dispatch(logout(router))} href="#">
+              Chiqish
+            </Link>
           </li>
 
           <li>
@@ -129,27 +130,19 @@ const Header = () => {
                 >
                   Account {user?.firstName}{" "}
                 </Link>
-                <button
-                  className="border-solid border-2  border-orange-300 py-2 px-5 flex  rounded-2xl"
-                  onClick={() => dispatch(logout(router))}
-                >
-                  Logout
-                </button>
               </div>
             ) : null}
           </li>
-          <li className="korzinka p-2 rounded-2xl">
+         
+          <li className="korzinka m-0 p-0  rounded-2xl  md:relative md:bottom-28">
             <Link href="#">
-              <div>
-                <Image
-                  className="w-10 close"
-                  onClick={handleClose}
-                  src={korzinka}
-                  alt="korzinka"
-                  width={5}
-                  height={5}
-                />
-              </div>
+              <Image
+                className="w-10 "
+                src={korzinka}
+                alt="korzinka"
+                width={5}
+                height={5}
+              />
             </Link>
           </li>
         </ul>

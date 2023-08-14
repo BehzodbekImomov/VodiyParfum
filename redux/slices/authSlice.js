@@ -1,6 +1,6 @@
 "use client";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { deleteCookie, getCookie, setCookie } from "cookies-next";
+import { deleteCookie,  getCookie,  setCookie } from "cookies-next";
 import { request } from "@/server/request";
 import { TOKEN, USER } from "@/constants";
 
